@@ -1,0 +1,27 @@
+# Check that a simple merge with no conflicts works
+# Manually checked with --keep
+> init
+<<<
++ wug.txt wug.txt
+> add wug.txt
+<<<
+> commit "version 1 of wug.txt"
+<<<
+> branch temp
+<<<
+> checkout temp
+<<<
++ notwug.txt notwug.txt
+> add notwug.txt
+<<<
+> commit "version 1 of notwug.txt"
+<<<
+> checkout master
+<<<
++ maybewug.txt maybewug.txt
+> add maybewug.txt
+<<<
+> commit "version 1 of maybewug.txt"
+<<<
+> merge temp
+<<<

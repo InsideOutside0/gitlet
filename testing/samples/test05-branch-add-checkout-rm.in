@@ -1,0 +1,46 @@
+# Check that all branch manipulation works as intended
+# Manually checked with --keep
+> init
+<<<
++ wug.txt wug.txt
+> add wug.txt
+<<<
+> commit "version 1 of wug.txt"
+<<<
+> branch temp
+<<<
++ wug.txt notwug.txt
+> add wug.txt
+<<<
+> commit "version 2a of wug.txt"
+<<<
+> checkout temp
+<<<
++ wug.txt maybewug.txt
+> add wug.txt
+<<<
+> commit "version 2b of wug.txt"
+<<<
+> checkout master
+<<<
++ notwug.txt notwug.txt
+> add notwug.txt
+<<<
+> commit "version 1 of notwug.txt"
+<<<
+> status
+=== Branches ===
+*master
+temp
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<
+> checkout temp
+<<<
